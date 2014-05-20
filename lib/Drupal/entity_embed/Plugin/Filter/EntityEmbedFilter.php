@@ -66,9 +66,8 @@ class EntityEmbedFilter extends FilterBase {
             // Build the rendered entity.
             $build = entity_view($entity, $view_mode, $langcode);
 
-            // Hide entity links by default.
-            // @todo Make this configurable via data attribute?
-            if (isset($build['links'])) {
+            // Hide entity links unless the data-links-show attribute exists.
+            if (isset($build['links']) && !$node->hasAttribute('data-links-show')) {
               $build['links']['#access'] = FALSE;
             }
             $output = drupal_render($build);
