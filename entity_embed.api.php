@@ -10,9 +10,14 @@
  * @{
  */
 
-// @todo Document
+/**
+ * Alter available display plugins before they are cached.
+ *
+ * @param $info
+ *   An associative array of display plugin definition arrays.
+ */
 function hook_entity_embed_display_plugins_alter(&$info) {
-
+  $info['file:file_default']['label'] = "My generic file label";
 }
 
 /**
