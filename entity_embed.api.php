@@ -31,7 +31,8 @@ function hook_entity_embed_display_plugins_alter(&$info) {
  *   The entity being rendered.
  */
 function hook_entity_embed_context_alter(array &$context, &$callback, \Drupal\Core\Entity\EntityInterface $entity) {
-
+  $context['langcode'] = "de";
+  $context['entity-embed-settings']['view-mode'] = "teaser";
 }
 
 /**
